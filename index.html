@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AIFROntier | Domine a IA e Fature Alto</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#7c008e",
+                        "on-tertiary-container": "#4d0059",
+                        "secondary": "#4cd7f6",
+                        "background": "#131315",
+                        "on-error": "#690005",
+                        "tertiary-container": "#e14ef6",
+                        "inverse-on-surface": "#313032",
+                        "surface-tint": "#d0bcff",
+                        "outline": "#958ea0",
+                        "primary-fixed-dim": "#d0bcff",
+                        "surface-dim": "#131315",
+                        "surface-variant": "#353437",
+                        "surface-container-low": "#1c1b1d",
+                        "surface-container": "#201f22",
+                        "on-secondary": "#003640",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-surface-variant": "#cbc3d7",
+                        "on-background": "#e5e1e4",
+                        "on-secondary-fixed": "#001f26",
+                        "on-primary-container": "#340080",
+                        "primary-fixed": "#e9ddff",
+                        "primary-container": "#a078ff",
+                        "surface-bright": "#39393b",
+                        "surface-container-high": "#2a2a2c",
+                        "surface": "#131315",
+                        "secondary-container": "#03b5d3",
+                        "on-tertiary": "#580065",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#6d3bd7",
+                        "inverse-surface": "#e5e1e4",
+                        "on-primary": "#3c0091",
+                        "on-primary-fixed": "#23005c",
+                        "tertiary-fixed-dim": "#fbabff",
+                        "surface-container-lowest": "#0e0e10",
+                        "outline-variant": "#494454",
+                        "on-primary-fixed-variant": "#5516be",
+                        "tertiary": "#fbabff",
+                        "primary": "#d0bcff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#36003e",
+                        "secondary-fixed": "#acedff",
+                        "on-surface": "#e5e1e4",
+                        "on-secondary-container": "#00424e",
+                        "tertiary-fixed": "#ffd6fd",
+                        "surface-container-highest": "#353437",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#4cd7f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "section-gap-lg": "120px",
+                        "container-max": "1280px",
+                        "section-gap-sm": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Sora"],
+                        "headline-xl": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Sora"],
+                        "label-md": ["JetBrains Mono"],
+                        "display-lg": ["Sora"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(208, 188, 255, 0.4);
+        }
+
+        .neon-border {
+            border: 1px solid #4cd7f6;
+            box-shadow: 0 0 10px rgba(76, 215, 246, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #d0bcff, #4cd7f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mesh-gradient {
+            background: radial-gradient(circle at 20% 30%, rgba(208, 188, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(76, 215, 246, 0.15) 0%, transparent 50%);
+        }
+
+        @keyframes pulse-cyan {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+        .pulse-active {
+            animation: pulse-cyan 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden mesh-gradient">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
+    <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-16">
+        <div class="font-headline-lg text-[24px] tracking-tighter text-primary">
+            AIFROntier
+        </div>
+        <div class="flex items-center gap-6">
+            <span class="hidden sm:block text-secondary font-label-md text-label-md animate-pulse">OFERTA LIMITADA</span>
+            <button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-bold text-sm hover:scale-95 transition-all duration-300 neon-glow">
+                Quero Lucrar
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-gutter overflow-hidden">
+    <div class="max-w-container-max mx-auto text-center relative z-10">
+        <div class="inline-block px-4 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-md text-label-md mb-6 border border-secondary/30 uppercase tracking-widest">
+            Acesso Vitalício Liberado
+        </div>
+        <h1 class="font-headline-xl text-[44px] md:text-display-lg leading-tight mb-8">
+            Fature <span class="gradient-text">+R$10.000,00</span> por Mês <br class="hidden md:block"/>
+            com Modelos de IA Sem Aparecer
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+            O método exato para criar personagens hiper-realistas e automatizar lucros no mercado digital. Comece hoje mesmo.
+        </p>
+        <div class="flex flex-col items-center gap-6">
+            <div class="flex flex-col items-center">
+                <span class="text-on-surface-variant line-through text-lg opacity-60">De R$ 197,00</span>
+                <span class="text-4xl md:text-5xl font-bold text-white mb-4">Por apenas <span class="text-secondary">R$ 19,90</span></span>
+            </div>
+            <a class="bg-gradient-to-r from-primary to-secondary text-on-primary px-10 py-5 rounded-2xl font-headline-xl text-xl font-extrabold hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(76,215,246,0.4)]" href="#oferta">
+                QUERO MEU ACESSO AGORA
+            </a>
+            <p class="text-on-surface-variant text-label-md flex items-center gap-2">
+                <span class="material-symbols-outlined text-green-400 text-sm">verified_user</span>
+                Pagamento único. Acesso imediato.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-20 px-gutter bg-surface-container-lowest relative overflow-hidden">
+    <div class="max-w-container-max mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="font-headline-xl text-3xl md:text-headline-xl mb-4">O Que Você Vai Aprender?</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-card p-8 rounded-2xl border-primary/10 flex items-start gap-4 hover:scale-[1.02] transition-all duration-300">
+                <span class="material-symbols-outlined text-primary text-3xl">face_6</span>
+                <div>
+                    <h3 class="font-bold text-xl mb-2">Modelos Consistentes</h3>
+                    <p class="text-on-surface-variant">Criar modelos mulheres consistentes impossíveis de ignorar.</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-secondary/10 flex items-start gap-4 hover:scale-[1.02] transition-all duration-300">
+                <span class="material-symbols-outlined text-secondary text-3xl">movie</span>
+                <div>
+                    <h3 class="font-bold text-xl mb-2">Vídeos Realistas</h3>
+                    <p class="text-on-surface-variant">Criar vídeos de modelos dançando altamente realistas.</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-primary/10 flex items-start gap-4 hover:scale-[1.02] transition-all duration-300">
+                <span class="material-symbols-outlined text-primary text-3xl">photo_camera</span>
+                <div>
+                    <h3 class="font-bold text-xl mb-2">Poses e Prompts</h3>
+                    <p class="text-on-surface-variant">Prompts para criar poses de fotos para sua modelo.</p>
+                </div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border-tertiary/30 bg-tertiary/5 flex items-start gap-4 hover:scale-[1.02] transition-all duration-300 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-tertiary text-on-tertiary px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-bl-lg">Bônus</div>
+                <span class="material-symbols-outlined text-tertiary text-3xl">payments</span>
+                <div>
+                    <h3 class="font-bold text-xl mb-2 text-tertiary">Métodos de Lucro</h3>
+                    <p class="text-on-surface-variant">Métodos reais e validados para lucrar pelo menos 10k por mês com sua modelo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Proof Section -->
+<section class="py-20 px-gutter bg-surface-container-lowest relative" id="resultados">
+    <div class="max-w-container-max mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="font-headline-xl text-3xl md:text-headline-xl mb-4">Eles já estão lucrando com IA</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <img alt="Testemunho Aluno 1" class="relative w-full h-auto rounded-2xl shadow-2xl border border-white/10" src="https://lh3.googleusercontent.com/aida/AP1WRLteTaejx_TzJCNfLQb091NKHHMNAaGwaSEXnOVeCW9eOluEJG5WNwjDusIw1jMrcfRKk0wYDlLbRdNxRFuWk_RWDnPSsZ6OciQUNNVLjphRX4z02fUuiz1wMg1odl2R4WonTzhMGtl_OnafZnFt6Hz3NDjoIv-_lq8kknjD6snISnTwXPZ5_hFHoioljsGiibFTpZQjmd0mebT2tf4mO7HDGCyo8iVgh4ig6My3LeW68oakpcZsC6WRTAt-"/>
+            </div>
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <img alt="Testemunho Aluno 2" class="relative w-full h-auto rounded-2xl shadow-2xl border border-white/10" src="https://lh3.googleusercontent.com/aida/AP1WRLujN6k_PEOklyH5lAX3eLQw4Qv0a2_0DtIxSrUpsZz7PEkxVDpBfZCoVjDV0T0w6m_O3D4ARanUQY7TrPGVOCxCzb6MLf8OIwPW1Z1FBNpuVE0ZoEewQ9gx81jQTA41lrIhOww9H3_5AAsLyCL9ex-Bo-ZyHtIRs7KtxOe96FH2pEXr13OM8aOJZwyRRjrGN1kExhQRxIo3k-QEf2C-9zBJil-GM1_MUn1XC_KpNut9X9y-0AvbbwWbkAdH"/>
+            </div>
+        </div>
+        <div class="mt-16 text-center">
+            <p class="font-body-lg text-on-surface-variant italic">
+                "O método AI Frontier mudou meu jogo. Em 15 dias já estava com os primeiros resultados na conta."
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Mentorship / Direct Value -->
+<section class="py-20 px-gutter relative overflow-hidden">
+    <div class="max-w-4xl mx-auto glass-card rounded-3xl p-10 border-primary/20 text-center">
+        <h2 class="font-headline-xl text-3xl mb-6">Mentoria e Suporte Inclusos</h2>
+        <p class="text-on-surface-variant text-body-lg mb-8">
+            Diferente de cursos gravados que te deixam sozinho, aqui você tem acesso à nossa comunidade VIP e calls semanais para tirar dúvidas e otimizar seus modelos.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="p-4 bg-surface-container rounded-xl border border-white/5">
+                <span class="text-primary font-bold block text-xl">VIP</span>
+                <span class="text-xs uppercase text-on-surface-variant">Comunidade</span>
+            </div>
+            <div class="p-4 bg-surface-container rounded-xl border border-white/5">
+                <span class="text-secondary font-bold block text-xl">LIVE</span>
+                <span class="text-xs uppercase text-on-surface-variant">Calls Semanais</span>
+            </div>
+            <div class="col-span-2 md:col-span-1 p-4 bg-surface-container rounded-xl border border-white/5">
+                <span class="text-tertiary font-bold block text-xl">FULL</span>
+                <span class="text-xs uppercase text-on-surface-variant">Suporte 24h</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Irresistible Offer Section -->
+<section class="py-section-gap-lg px-gutter relative bg-surface-container-highest" id="oferta">
+    <div class="max-w-3xl mx-auto text-center">
+        <div class="bg-primary/10 border border-primary/30 p-12 rounded-[2rem] relative overflow-hidden">
+            <!-- Decorative Glow -->
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 blur-[60px] rounded-full"></div>
+            <h2 class="font-headline-xl text-[32px] md:text-[48px] mb-4">Oferta Irresistível</h2>
+            <p class="text-on-surface-variant font-body-lg mb-10">
+                Tudo o que você precisa para dominar a fronteira das IAs e criar sua própria agência de modelos virtuais.
+            </p>
+            <div class="mb-10 inline-block">
+                <p class="text-sm text-on-surface-variant mb-2 font-label-md tracking-tighter uppercase">Somente nesta página:</p>
+                <div class="flex items-baseline justify-center gap-2">
+                    <span class="text-2xl text-on-surface-variant/50">R$</span>
+                    <span class="text-[80px] font-extrabold leading-none gradient-text">19,90</span>
+                </div>
+                <p class="text-primary font-bold mt-2">PAGAMENTO ÚNICO</p>
+            </div>
+            <ul class="text-left space-y-4 mb-12 max-w-sm mx-auto">
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-green-400">check_circle</span>
+                    <span class="text-on-surface">Dominando o Stable Diffusion</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-green-400">check_circle</span>
+                    <span class="text-on-surface">Biblioteca Secreta de Prompts</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-green-400">check_circle</span>
+                    <span class="text-on-surface">Estratégias de Monetização 2024</span>
+                </li>
+            </ul>
+            <button class="w-full bg-primary text-on-primary py-6 rounded-2xl font-headline-xl text-2xl font-black hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-[0_20px_50px_rgba(208,188,255,0.3)] neon-glow uppercase">
+                Aproveitar Agora
+            </button>
+            <p class="mt-6 text-on-surface-variant text-sm opacity-60">
+                Garantia de 7 dias ou seu dinheiro de volta.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Simplified Footer -->
+<footer class="w-full py-12 bg-background border-t border-white/5">
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-gutter gap-6">
+        <div class="text-center md:text-left">
+            <div class="font-headline-lg text-2xl text-primary mb-1">AIFROntier</div>
+            <p class="text-on-surface-variant text-xs opacity-60">Dominando a fronteira digital com IA.</p>
+        </div>
+        <div class="flex gap-6">
+            <a class="text-on-surface-variant text-xs hover:text-secondary transition-colors" href="#">Termos</a>
+            <a class="text-on-surface-variant text-xs hover:text-secondary transition-colors" href="#">Privacidade</a>
+            <a class="text-on-surface-variant text-xs hover:text-secondary transition-colors" href="#">Suporte</a>
+        </div>
+        <div class="text-on-surface-variant text-xs opacity-40">
+            © 2024 AI Frontier Academy.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Micro-interaction for buttons
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('mousedown', () => {
+            button.style.transform = 'scale(0.95)';
+        });
+        button.addEventListener('mouseup', () => {
+            button.style.transform = 'scale(1)';
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'scale(1)';
+        });
+    });
+
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
