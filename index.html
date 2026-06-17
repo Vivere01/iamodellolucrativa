@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>AIFROntier | Domine a IA e Fature Alto</title>
+    <title>iamodello | Domine a IA e Fature Alto</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -135,15 +135,240 @@
         .pulse-active {
             animation: pulse-cyan 2s infinite ease-in-out;
         }
+
+        /* ── WhatsApp Carousel ── */
+        .wpp-carousel-viewport { overflow: hidden; }
+        .wpp-carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+            will-change: transform;
+        }
+        .wpp-slide {
+            flex: 0 0 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0 8px;
+        }
+
+        /* Phone shell */
+        .phone-shell {
+            width: 260px;
+            border-radius: 36px;
+            background: #1a1a1a;
+            box-shadow: 0 0 0 8px #111, 0 0 0 10px #2a2a2a, 0 30px 80px rgba(0,0,0,.8);
+            overflow: hidden;
+            position: relative;
+        }
+        .phone-shell::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 110px; height: 26px;
+            background: #111;
+            border-radius: 0 0 18px 18px;
+            z-index: 20;
+        }
+
+        /* WhatsApp chrome */
+        .wpp-header {
+            background: #075e54;
+            padding: 36px 14px 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .wpp-avatar {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: #128c7e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .wpp-contact-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .wpp-contact-status {
+            font-size: 10px;
+            color: rgba(255,255,255,.7);
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .wpp-body {
+            background: #ece5dd;
+            padding: 12px 10px;
+            min-height: 310px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .bubble-received {
+            background: #fff;
+            color: #111;
+            padding: 7px 11px;
+            border-radius: 0 10px 10px 10px;
+            font-size: 12.5px;
+            max-width: 88%;
+            align-self: flex-start;
+            box-shadow: 0 1px 2px rgba(0,0,0,.15);
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .bubble-sent {
+            background: #dcf8c6;
+            color: #111;
+            padding: 7px 11px;
+            border-radius: 10px 0 10px 10px;
+            font-size: 12.5px;
+            max-width: 88%;
+            align-self: flex-end;
+            box-shadow: 0 1px 2px rgba(0,0,0,.15);
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .bubble-time {
+            font-size: 9.5px;
+            color: #999;
+            margin-top: 3px;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 2px;
+        }
+        .bubble-time-left {
+            font-size: 9.5px;
+            color: #999;
+            margin-top: 3px;
+        }
+
+        /* Bank screenshot card */
+        .screenshot-bubble {
+            background: #fff;
+            border-radius: 0 10px 10px 10px;
+            overflow: hidden;
+            max-width: 88%;
+            align-self: flex-start;
+            box-shadow: 0 1px 2px rgba(0,0,0,.15);
+        }
+        .screenshot-bubble img {
+            width: 190px;
+            display: block;
+        }
+        .screenshot-bubble-sent {
+            background: #dcf8c6;
+            border-radius: 10px 0 10px 10px;
+            overflow: hidden;
+            max-width: 88%;
+            align-self: flex-end;
+            box-shadow: 0 1px 2px rgba(0,0,0,.15);
+        }
+        .screenshot-bubble-sent img {
+            width: 190px;
+            display: block;
+        }
+
+        /* Bank card inside bubble */
+        .bank-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,.12);
+            margin-top: 4px;
+            width: 100%;
+        }
+        .bank-card-header {
+            background: #128c7e;
+            padding: 6px 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .bank-card-header span {
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .bank-card-body { padding: 8px 10px 6px; }
+        .bank-amount {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .bank-label {
+            font-size: 9px;
+            color: #666;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+
+        /* Carousel controls */
+        .carousel-btn {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.15);
+            background: rgba(255,255,255,.06);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all .2s;
+            backdrop-filter: blur(8px);
+            flex-shrink: 0;
+        }
+        .carousel-btn:hover {
+            background: rgba(208,188,255,.2);
+            border-color: #d0bcff;
+            box-shadow: 0 0 12px rgba(208,188,255,.3);
+        }
+        .carousel-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.2);
+            cursor: pointer;
+            transition: all .3s;
+        }
+        .carousel-dot.active {
+            background: #d0bcff;
+            box-shadow: 0 0 8px rgba(208,188,255,.6);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Wpp bottom bar */
+        .wpp-footer {
+            background: #f0f0f0;
+            padding: 7px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .wpp-input-fake {
+            flex: 1;
+            background: #fff;
+            border-radius: 20px;
+            height: 28px;
+            border: none;
+        }
+
+        /* tick double blue */
+        .tick { color: #4fc3f7; font-size: 12px; }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden mesh-gradient">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
     <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-16">
-        <div class="font-headline-lg text-[24px] tracking-tighter text-primary">
-            AIFROntier
-        </div>
+        <a href="#" class="flex items-center gap-2 hover:opacity-95 transition-opacity">
+            <img src="assets/logo.jpg" alt="iamodello logo" class="w-10 h-10 rounded-full border border-primary/30 object-cover" />
+            <span class="font-headline-lg text-[22px] tracking-tighter text-primary">iamodello</span>
+        </a>
         <div class="flex items-center gap-6">
             <span class="hidden sm:block text-secondary font-label-md text-label-md animate-pulse">OFERTA LIMITADA</span>
             <button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-bold text-sm hover:scale-95 transition-all duration-300 neon-glow">
@@ -223,28 +448,335 @@
     </div>
 </section>
 
-<!-- Social Proof Section -->
-<section class="py-20 px-gutter bg-surface-container-lowest relative" id="resultados">
-    <div class="max-w-container-max mx-auto">
-        <div class="text-center mb-16">
+<!-- Social Proof Section – WhatsApp Carousel -->
+<section class="py-20 px-gutter bg-surface-container-lowest relative overflow-hidden" id="resultados">
+
+    <!-- ambient glow blobs -->
+    <div class="absolute top-0 left-1/4 w-72 h-72 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-secondary/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-container-max mx-auto relative z-10">
+        <!-- heading -->
+        <div class="text-center mb-14">
+            <div class="inline-block px-4 py-1 rounded-full bg-green-500/10 text-green-400 font-label-md text-label-md mb-4 border border-green-500/20 uppercase tracking-widest">
+                📲 Resultados Reais
+            </div>
             <h2 class="font-headline-xl text-3xl md:text-headline-xl mb-4">Eles já estão lucrando com IA</h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            <p class="text-on-surface-variant text-body-md max-w-lg mx-auto">Prints reais de alunos que aplicaram o método e viram o dinheiro cair na conta.</p>
+            <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-4"></div>
         </div>
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <img alt="Testemunho Aluno 1" class="relative w-full h-auto rounded-2xl shadow-2xl border border-white/10" src="https://lh3.googleusercontent.com/aida/AP1WRLteTaejx_TzJCNfLQb091NKHHMNAaGwaSEXnOVeCW9eOluEJG5WNwjDusIw1jMrcfRKk0wYDlLbRdNxRFuWk_RWDnPSsZ6OciQUNNVLjphRX4z02fUuiz1wMg1odl2R4WonTzhMGtl_OnafZnFt6Hz3NDjoIv-_lq8kknjD6snISnTwXPZ5_hFHoioljsGiibFTpZQjmd0mebT2tf4mO7HDGCyo8iVgh4ig6My3LeW68oakpcZsC6WRTAt-"/>
-            </div>
-            <div class="relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <img alt="Testemunho Aluno 2" class="relative w-full h-auto rounded-2xl shadow-2xl border border-white/10" src="https://lh3.googleusercontent.com/aida/AP1WRLujN6k_PEOklyH5lAX3eLQw4Qv0a2_0DtIxSrUpsZz7PEkxVDpBfZCoVjDV0T0w6m_O3D4ARanUQY7TrPGVOCxCzb6MLf8OIwPW1Z1FBNpuVE0ZoEewQ9gx81jQTA41lrIhOww9H3_5AAsLyCL9ex-Bo-ZyHtIRs7KtxOe96FH2pEXr13OM8aOJZwyRRjrGN1kExhQRxIo3k-QEf2C-9zBJil-GM1_MUn1XC_KpNut9X9y-0AvbbwWbkAdH"/>
-            </div>
+
+        <!-- carousel wrapper -->
+        <div class="flex items-center gap-4 md:gap-6 max-w-xl mx-auto">
+
+            <!-- prev btn -->
+            <button class="carousel-btn" id="wpp-prev" aria-label="Anterior">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <!-- viewport -->
+            <div class="overflow-hidden flex-1" id="wpp-viewport">
+                <div class="wpp-carousel-track" id="wpp-track">
+
+                    <!-- ── Slide 1: Malu – 10k ── -->
+                    <div class="wpp-slide">
+                        <div class="phone-shell">
+                            <div class="wpp-header">
+                                <div class="wpp-avatar">👩</div>
+                                <div>
+                                    <div class="wpp-contact-name">Malu R.</div>
+                                    <div class="wpp-contact-status">online agora</div>
+                                </div>
+                                <svg style="margin-left:auto" width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                            </div>
+                            <div class="wpp-body">
+                                <div class="bubble-received">
+                                    Menina, testei o método essa semana 😱
+                                    <div class="bubble-time-left">09:14</div>
+                                </div>
+                                <div class="bubble-received">
+                                    Olha o que caiu na minha conta!!
+                                    <div class="bank-card">
+                                        <div class="bank-card-header">
+                                            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
+                                            <span>Inter · Saldo Disponível</span>
+                                        </div>
+                                        <div class="bank-card-body">
+                                            <div class="bank-amount">R$ 10.247,00</div>
+                                            <div class="bank-label">Atualizado hoje · 09:12</div>
+                                        </div>
+                                        <img src="assets/print 10k malu.png" alt="Print saldo Malu" style="width:100%;display:block;border-top:1px solid #eee"/>
+                                    </div>
+                                    <div class="bubble-time-left">09:14</div>
+                                </div>
+                                <div class="bubble-sent">
+                                    Nossa! Isso é REAL demais 🔥🔥
+                                    <div class="bubble-time">09:16 <svg width="14" height="9" viewBox="0 0 18 11" fill="none"><path d="M1 5.5l4 4L17 1" stroke="#4fc3f7" stroke-width="2"/><path d="M6 5.5l4 4" stroke="#4fc3f7" stroke-width="2"/></svg></div>
+                                </div>
+                                <div class="bubble-received">
+                                    Fiz isso em 18 dias com minha modelo IA 🤖
+                                    <div class="bubble-time-left">09:17</div>
+                                </div>
+                            </div>
+                            <div class="wpp-footer">
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 4a2 2 0 110 4 2 2 0 010-4zm0 10c-2.67 0-5.33-1.34-6.76-3.44C6.61 11.17 9.21 10 12 10s5.39 1.17 6.76 2.56C17.33 14.66 14.67 16 12 16z"/></svg>
+                                <div class="wpp-input-fake"></div>
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 15c1.66 0 3-1.34 3-3V6a3 3 0 00-6 0v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1-2.76 0-5.3-2.1-5.3-5.1H5c0 3.41 2.72 6.23 6 6.72V21h2v-2.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Slide 2: José – 10k ── -->
+                    <div class="wpp-slide">
+                        <div class="phone-shell">
+                            <div class="wpp-header">
+                                <div class="wpp-avatar">👨</div>
+                                <div>
+                                    <div class="wpp-contact-name">José M.</div>
+                                    <div class="wpp-contact-status">digitando...</div>
+                                </div>
+                                <svg style="margin-left:auto" width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                            </div>
+                            <div class="wpp-body">
+                                <div class="bubble-received">
+                                    Cara, sem precisar aparecer!! 😂
+                                    <div class="bubble-time-left">14:32</div>
+                                </div>
+                                <div class="bubble-received">
+                                    Minha modelo fez ISSO aqui hoje
+                                    <div class="bank-card">
+                                        <div class="bank-card-header" style="background:#003087">
+                                            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                                            <span>Banco · Transação Recebida</span>
+                                        </div>
+                                        <div class="bank-card-body">
+                                            <div class="bank-amount">R$ 10.000,00</div>
+                                            <div class="bank-label">Recebido via PIX · 14:28</div>
+                                        </div>
+                                        <img src="assets/print 10k josé.png" alt="Print saldo José" style="width:100%;display:block;border-top:1px solid #eee"/>
+                                    </div>
+                                    <div class="bubble-time-left">14:33</div>
+                                </div>
+                                <div class="bubble-sent">
+                                    Que resultado absurdo 🚀
+                                    <div class="bubble-time">14:35 <svg width="14" height="9" viewBox="0 0 18 11" fill="none"><path d="M1 5.5l4 4L17 1" stroke="#4fc3f7" stroke-width="2"/><path d="M6 5.5l4 4" stroke="#4fc3f7" stroke-width="2"/></svg></div>
+                                </div>
+                                <div class="bubble-received">
+                                    E eu nem precisei aparecer em nenhuma foto 🤫
+                                    <div class="bubble-time-left">14:36</div>
+                                </div>
+                            </div>
+                            <div class="wpp-footer">
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 4a2 2 0 110 4 2 2 0 010-4zm0 10c-2.67 0-5.33-1.34-6.76-3.44C6.61 11.17 9.21 10 12 10s5.39 1.17 6.76 2.56C17.33 14.66 14.67 16 12 16z"/></svg>
+                                <div class="wpp-input-fake"></div>
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 15c1.66 0 3-1.34 3-3V6a3 3 0 00-6 0v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1-2.76 0-5.3-2.1-5.3-5.1H5c0 3.41 2.72 6.23 6 6.72V21h2v-2.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Slide 3: Mais de 12k ── -->
+                    <div class="wpp-slide">
+                        <div class="phone-shell">
+                            <div class="wpp-header">
+                                <div class="wpp-avatar">👩‍💻</div>
+                                <div>
+                                    <div class="wpp-contact-name">Ana P.</div>
+                                    <div class="wpp-contact-status">online agora</div>
+                                </div>
+                                <svg style="margin-left:auto" width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                            </div>
+                            <div class="wpp-body">
+                                <div class="bubble-received">
+                                    Não acredito que passou de 12k!!!
+                                    <div class="bubble-time-left">19:45</div>
+                                </div>
+                                <div class="bubble-received">
+                                    Print do saldo agora pouco 👇
+                                    <div class="bank-card">
+                                        <div class="bank-card-header" style="background:#6750a4">
+                                            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
+                                            <span>Conta Digital · Saldo</span>
+                                        </div>
+                                        <div class="bank-card-body">
+                                            <div class="bank-amount">R$ 12.580,00</div>
+                                            <div class="bank-label">Disponível para uso imediato</div>
+                                        </div>
+                                        <img src="assets/Print mais de 12k.png" alt="Print mais de 12k" style="width:100%;display:block;border-top:1px solid #eee"/>
+                                    </div>
+                                    <div class="bubble-time-left">19:46</div>
+                                </div>
+                                <div class="bubble-sent">
+                                    Incrível, em quanto tempo? 👀
+                                    <div class="bubble-time">19:47 <svg width="14" height="9" viewBox="0 0 18 11" fill="none"><path d="M1 5.5l4 4L17 1" stroke="#4fc3f7" stroke-width="2"/><path d="M6 5.5l4 4" stroke="#4fc3f7" stroke-width="2"/></svg></div>
+                                </div>
+                                <div class="bubble-received">
+                                    3 semanas! Método iamodello que vi aqui 😍
+                                    <div class="bubble-time-left">19:48</div>
+                                </div>
+                            </div>
+                            <div class="wpp-footer">
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 4a2 2 0 110 4 2 2 0 010-4zm0 10c-2.67 0-5.33-1.34-6.76-3.44C6.61 11.17 9.21 10 12 10s5.39 1.17 6.76 2.56C17.33 14.66 14.67 16 12 16z"/></svg>
+                                <div class="wpp-input-fake"></div>
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 15c1.66 0 3-1.34 3-3V6a3 3 0 00-6 0v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1-2.76 0-5.3-2.1-5.3-5.1H5c0 3.41 2.72 6.23 6 6.72V21h2v-2.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Slide 4: 13k Inter ── -->
+                    <div class="wpp-slide">
+                        <div class="phone-shell">
+                            <div class="wpp-header" style="background:#eb5800">
+                                <div class="wpp-avatar" style="background:#c44a00">🧑</div>
+                                <div>
+                                    <div class="wpp-contact-name">Rafael T.</div>
+                                    <div class="wpp-contact-status">online agora</div>
+                                </div>
+                                <svg style="margin-left:auto" width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                            </div>
+                            <div class="wpp-body">
+                                <div class="bubble-received">
+                                    Bro o Inter chegou no limite 😭🔥
+                                    <div class="bubble-time-left">11:02</div>
+                                </div>
+                                <div class="bubble-received">
+                                    Olha só
+                                    <div class="bank-card">
+                                        <div class="bank-card-header" style="background:#eb5800">
+                                            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                                            <span>Banco Inter · Extrato</span>
+                                        </div>
+                                        <div class="bank-card-body">
+                                            <div class="bank-amount">R$ 13.400,00</div>
+                                            <div class="bank-label">Saldo em conta · 11:00</div>
+                                        </div>
+                                        <img src="assets/print 13k inter.png" alt="Print 13k Inter" style="width:100%;display:block;border-top:1px solid #eee"/>
+                                    </div>
+                                    <div class="bubble-time-left">11:03</div>
+                                </div>
+                                <div class="bubble-sent">
+                                    Isso é vida irmão 😤✅
+                                    <div class="bubble-time">11:05 <svg width="14" height="9" viewBox="0 0 18 11" fill="none"><path d="M1 5.5l4 4L17 1" stroke="#4fc3f7" stroke-width="2"/><path d="M6 5.5l4 4" stroke="#4fc3f7" stroke-width="2"/></svg></div>
+                                </div>
+                            </div>
+                            <div class="wpp-footer">
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 4a2 2 0 110 4 2 2 0 010-4zm0 10c-2.67 0-5.33-1.34-6.76-3.44C6.61 11.17 9.21 10 12 10s5.39 1.17 6.76 2.56C17.33 14.66 14.67 16 12 16z"/></svg>
+                                <div class="wpp-input-fake"></div>
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 15c1.66 0 3-1.34 3-3V6a3 3 0 00-6 0v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1-2.76 0-5.3-2.1-5.3-5.1H5c0 3.41 2.72 6.23 6 6.72V21h2v-2.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Slide 5: 17k Mercado Pago ── -->
+                    <div class="wpp-slide">
+                        <div class="phone-shell">
+                            <div class="wpp-header" style="background:#00a650">
+                                <div class="wpp-avatar" style="background:#007d3e">💰</div>
+                                <div>
+                                    <div class="wpp-contact-name">Carla D.</div>
+                                    <div class="wpp-contact-status">online agora</div>
+                                </div>
+                                <svg style="margin-left:auto" width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                            </div>
+                            <div class="wpp-body">
+                                <div class="bubble-received">
+                                    Gente o Mercado Pago explodiu 🤑
+                                    <div class="bubble-time-left">16:20</div>
+                                </div>
+                                <div class="bubble-received">
+                                    17k!! Nunca tinha visto esse número
+                                    <div class="bank-card">
+                                        <div class="bank-card-header" style="background:#00a650">
+                                            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/></svg>
+                                            <span>Mercado Pago · Saldo</span>
+                                        </div>
+                                        <div class="bank-card-body">
+                                            <div class="bank-amount">R$ 17.300,00</div>
+                                            <div class="bank-label">Disponível para sacar · 16:18</div>
+                                        </div>
+                                        <img src="assets/print 17k mercado pago.png" alt="Print 17k Mercado Pago" style="width:100%;display:block;border-top:1px solid #eee"/>
+                                    </div>
+                                    <div class="bubble-time-left">16:21</div>
+                                </div>
+                                <div class="bubble-sent">
+                                    Cara que resultado ABSURDO 😱🔥
+                                    <div class="bubble-time">16:22 <svg width="14" height="9" viewBox="0 0 18 11" fill="none"><path d="M1 5.5l4 4L17 1" stroke="#4fc3f7" stroke-width="2"/><path d="M6 5.5l4 4" stroke="#4fc3f7" stroke-width="2"/></svg></div>
+                                </div>
+                            </div>
+                            <div class="wpp-footer">
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 4a2 2 0 110 4 2 2 0 010-4zm0 10c-2.67 0-5.33-1.34-6.76-3.44C6.61 11.17 9.21 10 12 10s5.39 1.17 6.76 2.56C17.33 14.66 14.67 16 12 16z"/></svg>
+                                <div class="wpp-input-fake"></div>
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 15c1.66 0 3-1.34 3-3V6a3 3 0 00-6 0v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1-2.76 0-5.3-2.1-5.3-5.1H5c0 3.41 2.72 6.23 6 6.72V21h2v-2.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Slide 6: 10k com juros ── -->
+                    <div class="wpp-slide">
+                        <div class="phone-shell">
+                            <div class="wpp-header">
+                                <div class="wpp-avatar">🧑‍💼</div>
+                                <div>
+                                    <div class="wpp-contact-name">Lucas V.</div>
+                                    <div class="wpp-contact-status">visto por último hoje</div>
+                                </div>
+                                <svg style="margin-left:auto" width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                            </div>
+                            <div class="wpp-body">
+                                <div class="bubble-received">
+                                    Passou os 10k com os rendimentos!! 🤯
+                                    <div class="bubble-time-left">08:55</div>
+                                </div>
+                                <div class="bubble-received">
+                                    Olha o saldo com juros
+                                    <div class="bank-card">
+                                        <div class="bank-card-header" style="background:#1a237e">
+                                            <svg width="12" height="12" fill="white" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                                            <span>Conta · Saldo + Rendimento</span>
+                                        </div>
+                                        <div class="bank-card-body">
+                                            <div class="bank-amount">R$ 10.840,00</div>
+                                            <div class="bank-label">Com rendimento automático · 08:50</div>
+                                        </div>
+                                        <img src="assets/print 10k com juros.png" alt="Print 10k com juros" style="width:100%;display:block;border-top:1px solid #eee"/>
+                                    </div>
+                                    <div class="bubble-time-left">08:56</div>
+                                </div>
+                                <div class="bubble-sent">
+                                    10k e ainda rendendo? DEMAIS 🏆
+                                    <div class="bubble-time">08:58 <svg width="14" height="9" viewBox="0 0 18 11" fill="none"><path d="M1 5.5l4 4L17 1" stroke="#4fc3f7" stroke-width="2"/><path d="M6 5.5l4 4" stroke="#4fc3f7" stroke-width="2"/></svg></div>
+                                </div>
+                            </div>
+                            <div class="wpp-footer">
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 4a2 2 0 110 4 2 2 0 010-4zm0 10c-2.67 0-5.33-1.34-6.76-3.44C6.61 11.17 9.21 10 12 10s5.39 1.17 6.76 2.56C17.33 14.66 14.67 16 12 16z"/></svg>
+                                <div class="wpp-input-fake"></div>
+                                <svg width="20" height="20" fill="#666" viewBox="0 0 24 24"><path d="M12 15c1.66 0 3-1.34 3-3V6a3 3 0 00-6 0v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1-2.76 0-5.3-2.1-5.3-5.1H5c0 3.41 2.72 6.23 6 6.72V21h2v-2.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /wpp-track -->
+            </div><!-- /viewport -->
+
+            <!-- next btn -->
+            <button class="carousel-btn" id="wpp-next" aria-label="Próximo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
         </div>
-        <div class="mt-16 text-center">
-            <p class="font-body-lg text-on-surface-variant italic">
-                "O método AI Frontier mudou meu jogo. Em 15 dias já estava com os primeiros resultados na conta."
-            </p>
+
+        <!-- dots -->
+        <div class="flex items-center justify-center gap-2 mt-8" id="wpp-dots">
+            <div class="carousel-dot active" data-index="0"></div>
+            <div class="carousel-dot" data-index="1"></div>
+            <div class="carousel-dot" data-index="2"></div>
+            <div class="carousel-dot" data-index="3"></div>
+            <div class="carousel-dot" data-index="4"></div>
+            <div class="carousel-dot" data-index="5"></div>
         </div>
+
+        <!-- social proof tag line -->
+        <p class="text-center text-on-surface-variant text-sm mt-6 opacity-70">
+            🔒 Prints reais · Resultados individuais e não garantidos
+        </p>
     </div>
 </section>
 
@@ -317,8 +849,11 @@
 <!-- Simplified Footer -->
 <footer class="w-full py-12 bg-background border-t border-white/5">
     <div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-gutter gap-6">
-        <div class="text-center md:text-left">
-            <div class="font-headline-lg text-2xl text-primary mb-1">AIFROntier</div>
+        <div class="text-center md:text-left flex flex-col items-center md:items-start gap-2">
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.jpg" alt="iamodello logo" class="w-8 h-8 rounded-full border border-primary/30 object-cover" />
+                <span class="font-headline-lg text-xl text-primary">iamodello</span>
+            </div>
             <p class="text-on-surface-variant text-xs opacity-60">Dominando a fronteira digital com IA.</p>
         </div>
         <div class="flex gap-6">
@@ -327,7 +862,7 @@
             <a class="text-on-surface-variant text-xs hover:text-secondary transition-colors" href="#">Suporte</a>
         </div>
         <div class="text-on-surface-variant text-xs opacity-40">
-            © 2024 AI Frontier Academy.
+            © 2024 iamodello Academy.
         </div>
     </div>
 </footer>
@@ -358,6 +893,61 @@
             }
         });
     });
+
+    // WhatsApp Carousel Logic
+    const track = document.getElementById('wpp-track');
+    const prevBtn = document.getElementById('wpp-prev');
+    const nextBtn = document.getElementById('wpp-next');
+    const dotsContainer = document.getElementById('wpp-dots');
+    if (track && prevBtn && nextBtn && dotsContainer) {
+        const dots = Array.from(dotsContainer.children);
+        const slides = Array.from(track.children);
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            currentIndex = index;
+            
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            dots.forEach((dot, idx) => {
+                if (idx === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            updateCarousel(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            updateCarousel(currentIndex + 1);
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                updateCarousel(index);
+            });
+        });
+
+        // Optional: Auto-play every 6 seconds
+        let autoPlayInterval = setInterval(() => {
+            updateCarousel(currentIndex + 1);
+        }, 6000);
+
+        // Pause autoplay on interaction
+        const pauseAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+        };
+
+        prevBtn.addEventListener('click', pauseAutoPlay);
+        nextBtn.addEventListener('click', pauseAutoPlay);
+        dots.forEach(dot => dot.addEventListener('click', pauseAutoPlay));
+    }
 </script>
 </body>
 </html>
